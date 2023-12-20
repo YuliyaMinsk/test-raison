@@ -30,7 +30,13 @@ jobs:
         run: |
           npm run build
 
-      - name: Run a multi-line script
+      - name: Show builded files
         run: |
-          echo test the checkout action,
           ls -a
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./web/build
+          force_orphan: true
