@@ -134,30 +134,30 @@
     .background-image {
       background-image: none;
       min-height: auto;
+    }
 
-      .cards {
-        position: static;
+    .cards {
+      position: static;
 
-        .card {
-          border-radius: 16px;
+      .card {
+        border-radius: 16px;
 
-          .card-header {
-            .card-title {
-              font-size: $font20;
-              line-height: 1.2;
-              letter-spacing: -0.34px;
-            }
+        .card-header {
+          .card-title {
+            font-size: $font20;
+            line-height: 1.2;
+            letter-spacing: -0.34px;
           }
+        }
 
-          .card-contact {
-            line-height: 1.5;
-            letter-spacing: -0.176px;
-          }
+        .card-contact {
+          line-height: 1.5;
+          letter-spacing: -0.176px;
+        }
 
-          .card-address {
-            line-height: 1.5;
-            letter-spacing: -0.176px;
-          }
+        .card-address {
+          line-height: 1.5;
+          letter-spacing: -0.176px;
         }
       }
     }
