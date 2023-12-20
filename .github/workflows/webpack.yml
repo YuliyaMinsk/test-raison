@@ -31,6 +31,6 @@ jobs:
           npm run build
 
       - name: Run a multi-line script
-      run: |
-        echo test the checkout action,
-        ls -a
+        run: |
+          echo test the checkout action,
+          ls -a
