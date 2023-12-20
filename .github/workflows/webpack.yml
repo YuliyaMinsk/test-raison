@@ -26,6 +26,3 @@ jobs:
         run: |
           npm install
           npm run build
-
-      - name: Copy files from 'dist' to root
-        run: cp -R dist/* .
