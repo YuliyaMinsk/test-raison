@@ -134,10 +134,14 @@
     .background-image {
       background-image: none;
       min-height: auto;
+
+      .cards {
+        position: static;
+      }
     }
 
     .cards {
-      position: static;
+      flex-direction: column;
 
       .card {
         border-radius: 16px;
@@ -160,10 +164,6 @@
           letter-spacing: -0.176px;
         }
       }
-    }
-
-    .cards {
-      flex-direction: column;
     }
   }
 }
