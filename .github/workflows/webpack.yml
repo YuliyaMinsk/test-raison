@@ -23,20 +23,17 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: |
-          npm install
+        run: npm install
 
       - name: Build project
-        run: |
-          npm run build
+        run: npm run build
 
       - name: Show builded files
         run: |
           ls -a
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./test-raison/build
-          force_orphan: true
+          branch: gh-pages
+          folder: dist
