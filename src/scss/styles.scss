@@ -1,3 +1,183 @@
 @import './fonts.scss';
 @import './abstract.scss';
 @import './base.scss';
+
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+
+  .title {
+    font-size: $font48;
+    line-height: 1;
+    font-weight: bold;
+    letter-spacing: -1.44px;
+    margin-bottom: $main-spaces;
+  }
+
+  .subtitle {
+    font-size: $font18;
+    line-height: 1.33;
+    font-weight: normal;
+    letter-spacing: -0.198px;
+  }
+}
+
+.container {
+  margin-bottom: 116px;
+
+  .mobile-background-image {
+    display: none;
+    background-image: url('../assets/images/world-map.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    min-height: 202px;
+    margin-bottom: 40px;
+  }
+
+  .background-image {
+    position: relative;
+    background-image: url('../assets/images/world-map.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 707px;
+
+    .cards {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  .cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: $main-spaces;
+    margin-bottom: $main-spaces;
+
+    .card {
+      width: 100%;
+      padding: $main-spaces;
+
+      border-radius: 20px;
+      background: $color-light;
+      box-shadow: 0px 0px 40px 0px rgba(44, 59, 64, 0.15);
+
+      .card-header {
+        position: relative;
+
+        .card-title {
+          font-size: $font28;
+          line-height: 1.14;
+          font-weight: bold;
+          letter-spacing: -0.588px;
+          margin-bottom: $font20;
+        }
+
+        .card-flag {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .card-contact {
+        line-height: 1.33;
+        letter-spacing: -0.198px;
+        overflow-wrap: break-word;
+
+        &:last-of-type {
+          margin-bottom: 12px;
+        }
+      }
+
+      .card-address {
+        color: $color-light-gray;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: -0.198px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-bottom: 40px;
+
+    .title {
+      font-size: $font28;
+      letter-spacing: -0.588px;
+      margin-bottom: $main-spaces-mobile;
+    }
+
+    .subtitle {
+      font-size: $font16;
+      line-height: 1.5;
+      letter-spacing: -0.176px;
+    }
+  }
+
+  .container {
+    margin-bottom: 48px;
+
+    .mobile-background-image {
+      display: block;
+      min-height: calc(80vw * 707 / 1080);
+    }
+
+    .background-image {
+      background-image: none;
+      min-height: auto;
+
+      .cards {
+        position: static;
+
+        .card {
+          border-radius: 16px;
+
+          .card-header {
+            .card-title {
+              font-size: $font20;
+              line-height: 1.2;
+              letter-spacing: -0.34px;
+            }
+          }
+
+          .card-contact {
+            line-height: 1.5;
+            letter-spacing: -0.176px;
+          }
+
+          .card-address {
+            line-height: 1.5;
+            letter-spacing: -0.176px;
+          }
+        }
+      }
+    }
+
+    .cards {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .mobile-background-image {
+    display: block;
+    min-height: calc(100vw * 707 / 1080);
+  }
+}
+
+@media (min-width: 1025px) {
+  .mobile-background-image {
+    display: block;
+    min-height: calc(1024px * 707 / 1080);
+  }
+}

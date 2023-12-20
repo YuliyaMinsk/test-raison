@@ -22,9 +22,18 @@ section {
 
 body {
   font-family: 'DMSans', sans-serif;
+  font-weight: normal;
+  font-size: $font18;
+
   background-color: $color-background;
   color: $color-dark;
   margin: 0;
+  padding: 116px 0;
+
+  @media (max-width: $width-768) {
+    padding: 40px;
+    font-size: $font16;
+  }
 }
 
 input,
