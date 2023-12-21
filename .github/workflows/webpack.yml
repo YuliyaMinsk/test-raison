@@ -19,6 +19,10 @@ jobs:
       matrix:
         node-version: [18.x]
 
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+
     steps:
       - uses: actions/checkout@v3
 
