@@ -31,9 +31,16 @@ jobs:
       - name: Show builded files
         run: ls -a
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          branch: gh-pages
-          folder: dist
-          token: ${{ secrets.DEPLOY_TOKEN }}
+          # Upload build repository
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+        token: ${{ secrets.DEPLOY_TOKEN }}
